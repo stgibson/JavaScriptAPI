@@ -9,10 +9,6 @@
       var importObject = {
         imports: { imported_func: arg => console.log(arg) }
       };
-      // Uncomment the following to use streaming
-      // WebAssembly.instantiateStreaming(fetch('simple.wasm'), importObject)
-      //   .then(obj => obj.instance.exports.exported_func());
-      // Comment out the following to use streaming
       fetch('simple.wasm').then(response =>
         response.arrayBuffer()
       ).then(bytes =>
